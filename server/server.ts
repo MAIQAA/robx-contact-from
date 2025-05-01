@@ -44,7 +44,8 @@ interface ContactFormFields {
 // API endpoint to send email
 app.post(
   "/api/contact",
-  async (req: Request<object, object, ContactFormFields>, res: Response) => {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  async (req: Request<{}, {}, ContactFormFields>, res: Response) => {
     const { name, email, phone, subject, message, honeypot } = req.body;
 
     // Check honeypot for spam
